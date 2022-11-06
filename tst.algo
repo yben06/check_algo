@@ -1,30 +1,36 @@
 Check_algo
+
 Var
-l:ENTIER:=0;
-m:ENTIER:=0;
-v:ENTIER:=0; 
-i:ENTIER:=0;
-voyels: ARRAY_OF CHAR[6]:=["a », « e », « i », « o », « u », « y"];
+    l:ENTIER:=0;
+    m:ENTIER:=0;
+    v:ENTIER:=0; 
+    i:ENTIER:=0;
+    voyels: ARRAY_OF CHAR[6]:=["a", "e", "i", "o", "u", "y"];
+
 COMMENCER
-Lire(str);
-Ajouter le dernier mot s’il n’y a pas d’espace avant le point
-SI (str[str.length-2]<> » « ) ALORS
+    Lire(str);
+
+    SI (str[str.length-2]<>" ") ALORS
     m++;
     END_IF
-WHILE (str[i]<> ». ») Faire
-SI(str[i]<> » « ) ALORS
+
+    WHILE (str[i]<>".") Faire
+        SI (str[i]<>" ") ALORS
         l++;
-SI(voyels.includes(str[i].toLowerCase())) ALORS
+            SI (voyels.includes(str[i].toLowerCase())) ALORS
             m++;
             END_IF
-AUTRE
-SI((str[i-1]<> » « )et(i<>0))ALORS
+        SINON
+            SI ((str[i-1]<>" ")et(i<>0))ALORS
             m++;
             END_IF
         END_IF
         i++;
     END_WHILE 
-écrire(l);
-écrire(m);
-écrire(v);
+
+    écrire(l);
+    écrire(m);
+    écrire(v);
 Fin
+
+
